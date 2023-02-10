@@ -1,5 +1,8 @@
+import os
+
 from flask import Flask
 from app.config import Config
+from app.templates.shipping_form import Package
 
 app = Flask(__name__)
 
@@ -12,4 +15,5 @@ def index():
 
 @app.route('/new_package', methods=['GET', 'POST'])
 def new_package():
+  package = Package()
   return render_template('shipping_request.html')

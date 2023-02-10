@@ -6,7 +6,8 @@ from map.map import map
 class Package(FlaskForm):
   sender_name = StringField('Sender name', validators=[DataRequired()])
   recipient_name = StringField('Recipient name', validators=[DataRequired()])
-  orgin = SelectField('Origin', validators=[DataRequired()], choices=map)
-  destination = SelectField('Destination', validators=[DataRequired()], choices=map)
+  origin = SelectField('Origin', choices=[(city, city) for city in map.keys()], validators=[DataRequired()])
+  destination = SelectField('Destination', choices=[(city, city) for city in map.keys()], validators=[DataRequired()])
   is_express = BooleanField('Express?', validators=[DataRequired()])
   submit = SubmitField('Ship Package')
+  cancel = SubmitField("Cancel")

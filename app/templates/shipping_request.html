@@ -1,0 +1,14 @@
+<form method="post" action="{{ url_for(.new_package) }}">
+    {{ form.csrf_token }}
+    {{ form.hidden_tag() }}
+    <div>
+        <h1>Shipping Form</h1>
+        {{ form.sender_name.label }} {{ form.sender_name() }}
+        {{ form.recipient_name.label }} {{ form.recipient_name() }}
+        {{ form.origin.label }} {{ form.origin() }}
+        {{ form.destination.label }} {{ form.destination() }} 
+        {{ form.is_express.label }} {{ form.is_express() }}
+        {{ form.submit.label }} {{ form.submit() }}
+        {{ form.cancel.label }} {{ form.cancel() }}
+    </div>
+</form>
