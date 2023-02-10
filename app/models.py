@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-
+from map.map import advance_delivery, DELIVERED
 
 db = SQLAlchemy()
 
