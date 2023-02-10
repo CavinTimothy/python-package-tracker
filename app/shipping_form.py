@@ -8,6 +8,6 @@ class ShippingForm(FlaskForm):
   recipient_name = StringField('Recipient name', validators=[DataRequired()])
   origin = SelectField('Origin', choices=[(city, city) for city in map.keys()], validators=[DataRequired()])
   destination = SelectField('Destination', choices=[(city, city) for city in map.keys()], validators=[DataRequired()])
-  is_express = BooleanField('Express Shipping?', validators=[DataRequired()])
+  is_express = BooleanField('Express Shipping?')
   submit = SubmitField('Ship Package')
   cancel = SubmitField("Cancel")
